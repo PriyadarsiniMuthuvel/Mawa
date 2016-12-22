@@ -2,11 +2,11 @@ package action;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+//import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class HtmlClass {
 	public static void main(String[] args) {
-		HtmlUnitDriver unitDriver = new HtmlUnitDriver();
+		/*//HtmlUnitDriver unitDriver = new HtmlUnitDriver();
 		unitDriver.setJavascriptEnabled(true);
 		 
 		// open google.com webpage
@@ -26,7 +26,7 @@ public class HtmlClass {
 		// Click the button
 		button.click();
  
-		System.out.println("Title of the page is -> " + unitDriver.getTitle());
+		System.out.println("Title of the page is -> " + unitDriver.getTitle());*/
  
 	}
 }
