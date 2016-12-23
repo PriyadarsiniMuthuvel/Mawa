@@ -38,7 +38,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import constant.Constant;
 import exception.CustomException;
 
-public class ActionKeywords {
+public class ActionKeywords2 {
 	
 	public static void loginVerify(String ElementID,String data,WebDriver driver) throws Exception{
 		
@@ -303,7 +303,7 @@ public class ActionKeywords {
 			driver.navigate().refresh();
 		}
 		catch(Exception ex){
-			throw ex;	
+			throw ex;
 		}
 	}
 	
@@ -1013,7 +1013,6 @@ public class ActionKeywords {
 	public static boolean verifyDropdown(String ElementID, String data,WebDriver driver) throws Exception{
 		try{
 			String value = driver.findElement(By.id(ElementID)).getText();
-			System.out.print(value);
 			if(value.equals(data)){
 				return true;
 			}
@@ -1653,7 +1652,6 @@ public class ActionKeywords {
 			 String data= confirmationAlert.getText();
 			//System.out.println("Alert text is " + text);
 			if(data.equals(text)){
-				confirmationAlert.accept();
 				System.out.println("Alert Text Verified");
 			}
 			else{
@@ -1998,21 +1996,6 @@ public class ActionKeywords {
 		actions.moveToElement(element);
 		actions.perform();
 	}
-	public static void scrolltoElement(WebDriver driver, String element, String data){
-		Actions actions = new Actions(driver);
-		((JavascriptExecutor) driver).executeScript("scroll(0,-250);");
-		WebElement scrollElement = driver.findElement(By.id(element));
-		
-		actions.moveToElement(scrollElement);
-		actions.perform();
-	}
-	
-	public static void Double_click(WebDriver driver, WebElement element, String data){
-		Actions actions = new Actions(driver);
-		element=driver.findElement(By.cssSelector(data));
-		actions.doubleClick(element);
-		actions.perform();
-	}
 	
 	public static void listviewtable(String ElementID, String text,WebDriver driver){
 		boolean bool = false;
@@ -2072,21 +2055,19 @@ public class ActionKeywords {
 	}
 	
 	public static void SetTrimURL(String ElementID, String data, WebDriver driver){
-		try{
-			
+			try{
 				String url =driver.getCurrentUrl();
 				String[] urlArray = url.split("/");
 				String tempurl = urlArray[urlArray.length-1];
-				Constant.tempUrl =(data+tempurl);
-				driver.get(Constant.tempUrl);
+				String NewUrl =(data+tempurl);
+				driver.get(NewUrl);
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.manage().window().maximize();
 			}
 			catch(Exception ex){
 				throw ex;
 			}
-	}
-		
+		}
 		
 		
 	public static void wait(String ElementID, String data, WebDriver driver) throws Exception{
@@ -2143,17 +2124,7 @@ public class ActionKeywords {
 		  	throw ex;
 		}
 	}
-	public static void alterTextXpath(String ElementID,String data,WebDriver driver) throws InterruptedException{
-		try{
-			presenceOfElementXpath(ElementID,data,driver);	
-			WebElement element=driver.findElement(By.xpath(ElementID));
-			element.clear();
-			element.sendKeys(data);
-		}
-		catch(Exception ex){
-			throw ex;
-		}
-	}	 
+		 
 	public static boolean click_VolunteerID_Xpath(String ElementID, String text,WebDriver driver){
 		try{
 		WebElement table = driver.findElement(By.xpath(ElementID));

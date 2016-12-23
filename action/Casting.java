@@ -1,16 +1,17 @@
 package action;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Casting {
 	
-	public static void main(String args[]){
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Mstemp001\\workspace\\HybridDemo\\ChromeDriver\\chromedriver.exe"); 
-		 WebDriver driver=new ChromeDriver();
-		    //driver=new FirefoxDriver();
-		    driver.manage().window().maximize();
-		    driver.get("http://www.google.com");
+	public static void main(String args[]) throws ParseException{
+		Date sdate= new Date();
+		DateFormat dateformat= new SimpleDateFormat("yyyy/mm/dd");
+		String date1=dateformat.format(sdate);
+		System.out.println(date1);
 	}
 	}
 
